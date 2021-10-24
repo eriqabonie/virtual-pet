@@ -95,4 +95,44 @@ describe('constructor', () => {
     expect(pet.hunger).toEqual(0);
   });
 
+
+  it('checkup fitness 3 or less', () => {
+    const pet = new Pet('Fido');
+
+    pet.fitness = 3;
+    pet.checkUp();
+
+    expect(pet.status).toEqual('I need a walk');
+  });
+
+  it('checkup fitness 3 or less', () => {
+    const pet = new Pet('Fido');
+
+    pet.hunger = 5;
+    pet.checkUp();
+
+    expect(pet.status).toEqual('I am hungry');
+  });
+
+
+  it('checkup fitness is 3 or less and hunger is 5 or more', () => {
+    const pet = new Pet('Fido');
+
+    pet.fitness = 3;
+    pet.hunger = 5;
+    pet.checkUp();
+
+    expect(pet.status).toEqual('I am hungry AND I need a walk');
+  });
+
+  it('checkup fitness is more than 3 and hunger less than 5', () => {
+    const pet = new Pet('Fido');
+
+    pet.fitness = 4;
+    pet.hunger = 4;
+    pet.checkUp();
+
+    expect(pet.status).toEqual('I feel great!');
+  });
+
 });

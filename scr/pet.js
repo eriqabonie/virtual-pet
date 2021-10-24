@@ -36,6 +36,24 @@ Pet.prototype.feed = function () {
 
 }
 
+Pet.prototype.checkUp = function () {
+    const amGood = 'I feel great!';
+    const walkMe = 'I need a walk';
+    const feedMe = 'I am hungry';
+    const amDying = 'I am hungry AND I need a walk';
+
+    if (this.fitness <= 3 && this.hunger >= 5) {
+        this.status = amDying;
+    } else if (this.fitness <= 3) {
+        this.status = walkMe;
+    } else if (this.hunger >= 5) {
+        this.status = feedMe;
+    } else {
+        this.status = amGood;
+    }
+
+
+}
 
 
 module.exports = Pet;
