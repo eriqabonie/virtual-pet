@@ -7,7 +7,10 @@ describe('constructor', () => {
   });
 
   //struggling with this test
-  xit('returns pet name', (petName) => {
-    expect(pet(petName)).toEqual(petName);
+  //you call the function here in the test in order to match the outcome with the expected 
+  it('sets the name property', () => {
+    const pet = new Pet('Fido');
+
+    expect(pet.petName).toEqual('Fido');
   });
 });
