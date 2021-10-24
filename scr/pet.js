@@ -55,5 +55,21 @@ Pet.prototype.checkUp = function () {
 
 }
 
+Pet.prototype.isAlive = function () {
+    const dying = false;
+    const thriving = true;
+
+    if (this.fitness <= 0) {
+        this.health = dying;
+    } else if (this.hunger >= 10) {
+        this.health = dying;
+    } else if (this.age >= 30) {
+        this.health = dying;
+    } else {
+        this.health = thriving;
+    }
+    
+}
+
 
 module.exports = Pet;

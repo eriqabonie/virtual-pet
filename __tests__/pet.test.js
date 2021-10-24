@@ -135,4 +135,46 @@ describe('constructor', () => {
     expect(pet.status).toEqual('I feel great!');
   });
 
+  it('check if pet is alive, fitness 0 or less, return false', () => {
+    const pet = new Pet('Fido');
+
+    pet.fitness = 0;
+    pet.isAlive();
+
+
+    expect(pet.health).toEqual(false);
+  });
+
+  it('check if pet is alive, hunger 10 or more, return false', () => {
+    const pet = new Pet('Fido');
+
+    pet.hunger = 10;
+    pet.isAlive();
+
+
+    expect(pet.health).toEqual(false);
+  });
+
+  it('check if pet is alive, age 30 or more, return false', () => {
+    const pet = new Pet('Fido');
+
+    pet.age = 30;
+    pet.isAlive();
+
+
+    expect(pet.health).toEqual(false);
+  });
+
+  it('check if pet is alive, above 3 return true', () => {
+    const pet = new Pet('Fido');
+
+    pet.age = 29;
+    pet.hunger = 9;
+    pet.fitness = 1;
+    pet.isAlive();
+
+
+    expect(pet.health).toEqual(true);
+  });
+
 });
