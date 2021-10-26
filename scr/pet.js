@@ -6,6 +6,13 @@ function Pet(petName) {
  this.fitness = 10;
 
 }
+// Didn't understand the getter function and how to use and test it
+/**Pet.prototype = {
+    get isAlive() {
+        return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+    }
+   
+}**/
 
 Pet.prototype.growUp = function() {
     this.age += 1;
@@ -55,6 +62,7 @@ Pet.prototype.checkUp = function () {
 
 }
 
+//need to try this with a getter method
 Pet.prototype.isAlive = function () {
     const dying = false;
     const thriving = true;
@@ -70,6 +78,9 @@ Pet.prototype.isAlive = function () {
     }
     
 }
+
+
+
 
 
 module.exports = Pet;

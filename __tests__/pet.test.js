@@ -165,7 +165,7 @@ describe('constructor', () => {
     expect(pet.health).toEqual(false);
   });
 
-  it('check if pet is alive, above 3 return true', () => {
+  it('check if pet is alive,ie. above 3 return true', () => {
     const pet = new Pet('Fido');
 
     pet.age = 29;
@@ -176,5 +176,7 @@ describe('constructor', () => {
 
     expect(pet.health).toEqual(true);
   });
+
+
 
 });
