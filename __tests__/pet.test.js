@@ -177,6 +177,21 @@ describe('constructor', () => {
     expect(pet.health).toEqual(true);
   });
 
-
-
 });
+
+  //Throwing Errors
+
+  describe('feed', () => {
+
+ 
+
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido');
+  
+        pet.age = 30;
+    
+        expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+      });
+  });
+
+
