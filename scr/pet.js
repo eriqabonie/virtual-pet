@@ -7,41 +7,31 @@
 
 } 
 
-//still struggling with getter function and can't get the throw to work
+//Remember: This get function is treated as a property
 
-/* Pet.prototype = {
+ Pet.prototype = {
     get isAlive() {
       return this.age < 30 && this.hunger < 10 && this.fitness > 0;
     }
   }
-  */
-
-Pet.prototype.isAlive = function () {
-
-    const dying = false;
-    const thriving = true;
-
-    if (this.fitness <= 0) {
-        this.health = dying;
-    } else if (this.hunger >= 10) {
-        this.health = dying;
-    } else if (this.age >= 30) {
-        this.health = dying;
-    } else {
-        this.health = thriving;
-    } 
-
-    return this.health;
-
-}  
+  
 
 Pet.prototype.growUp = function() {
+   
+    if (this.isAlive == false)  {
+        throw new Error('Your pet is no longer alive :(');
+      }
+   
     this.age += 1;
     this.hunger += 5;
     this.fitness -= 3;
 }
 
 Pet.prototype.walk = function() {
+
+    if (this.isAlive == false)  {
+        throw new Error('Your pet is no longer alive :(');
+      }
 
     const MAXIMUM_FITNESS = 10;
     if ((this.fitness + 4) <= 10 ) {
@@ -69,6 +59,10 @@ Pet.prototype.feed = function () {
 }
 
 Pet.prototype.checkUp = function () {
+
+    if (this.isAlive == false)  {
+        throw new Error('Your pet is no longer alive :(');
+      }
 
     const amGood = 'I feel great!';
     const walkMe = 'I need a walk';
